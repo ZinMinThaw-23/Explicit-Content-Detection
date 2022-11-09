@@ -8,7 +8,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url("https://github.com/ZinMinThaw-23/Explicit-Content-Detection/blob/main/backgroundphoto.jpg");
+             background-image: url("https://www.peakpx.com/en/hd-wallpaper-desktop-pyqrg/download/5120x2880");
              background-attachment: fixed;
              background-size: cover
          }}
