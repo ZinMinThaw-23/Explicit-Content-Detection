@@ -26,7 +26,7 @@ streamlit_style = """
 			html, body, [class*="css"]  {
 			font-family: 'Nunito Sans', sans-serif;
 			font-size:15px;
-			color: 	#a1bbc5;
+			color: 	#ffffff;
 			}
 			</style>
 			"""
