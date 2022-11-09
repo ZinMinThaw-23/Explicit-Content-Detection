@@ -8,7 +8,7 @@ def add_bg_from_url():
          f"""
          <style>
          .stApp {{
-             background-image: url(//cdn.shopify.com/s/files/1/0011/4651/9637/t/220/assets/moonbackground.png?v=7157594…);
+             background-image: url(https://github.com/ZinMinThaw-23/Explicit-Content-Detection/blob/main/backgroundphoto.jpg);
              background-attachment: fixed;
              background-size: cover
          }}
