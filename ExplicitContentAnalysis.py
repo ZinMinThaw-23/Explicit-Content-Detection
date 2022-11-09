@@ -40,4 +40,4 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="big-font">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
+st.markdown('<p class="">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
