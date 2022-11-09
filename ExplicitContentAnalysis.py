@@ -40,7 +40,4 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p class="big-font">Taylor Swift Midnights Album Vinyl Varients Color Analysis with David </p>', unsafe_allow_html=True)
-
-st.image("Midnights-Logo.png", width=200)
-st.image("TS-Midnights-Logo.PNG", width=200)
+st.markdown('<p class="big-font">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
