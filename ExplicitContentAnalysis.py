@@ -1,23 +1,5 @@
-import sys 
-
-sys.path.append('/usr/local/lib/python3.9/site-packages')
-
 import streamlit as st
 import pandas as pd
-from pyecharts.charts import Pie
-from numpy import array
-from collections import Counter
-from sklearn.cluster import KMeans
-from matplotlib import colors
-import matplotlib.pyplot as plt
-import numpy as np
-import cv2
-from colorblind import colorblind
-from scipy.spatial import KDTree
-from webcolors import (
-    CSS3_HEX_TO_NAMES,
-    hex_to_rgb,
-)
 
 st.set_page_config( page_title="Color Analysis with David",page_icon="🧊",layout="wide", initial_sidebar_state="expanded")      
 
