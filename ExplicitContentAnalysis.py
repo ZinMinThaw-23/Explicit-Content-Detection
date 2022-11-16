@@ -43,4 +43,6 @@ st.markdown("""
 
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
+user_input = st.text_area("label goes here", default_value_goes_here)
+
 
