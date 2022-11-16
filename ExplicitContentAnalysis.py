@@ -43,6 +43,10 @@ st.markdown("""
 
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
-user_input = st.text_area("label goes here", default_value_goes_here)
+input = st.text_area("Enter Input Data :")
+
+output = input.upper() # final_result_from_processing_the_input
+
+st.text_area(label="Output Data:", value=output, height=350)
 
 
