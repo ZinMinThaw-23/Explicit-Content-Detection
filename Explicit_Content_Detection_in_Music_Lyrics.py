@@ -17,7 +17,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 
 #Clean the dataset by removing no match rows
-song_data = pd.read_csv("/content/drive/MyDrive/Explicit Content Analysis/Labeled_Data1.csv")
+song_data = pd.read_csv("Labeled_Data.csv")
 song_data = song_data[['artist','song','text','explicit_label']]
 song_data = song_data.loc[song_data['explicit_label'] != 'no match']
 #remove'\n' from the lyrics
