@@ -157,15 +157,6 @@ def classification(feats, model):
   return train_f1,test_f1
 
 
-#Parameter Tuning with Grid_Search
-#train_vecs = feats.fit_transform(train_data)
-#test_vecs = feats.transform(test_data)
-#param_test = {'max_depth':list(range(60,80,1))} #
-#gsearch = GridSearchCV(estimator = DecisionTreeClassifier(),
-                       #param_grid = param_test, refit=False, scoring='recall', cv=5)
-#gsearch.fit(train_vecs, train_label)
-#gsearch.cv_results_, gsearch.best_params_, gsearch.best_score_'''
-
 #Logistic Regression
 model_lo= LogisticRegression(C=50)
 classification(feats, model_lo)
