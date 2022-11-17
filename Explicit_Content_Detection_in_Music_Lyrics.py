@@ -71,7 +71,7 @@ for i in range(len(Y_test)):
     
 #Customized Features
 #Import Bad Words List
-file = open('/content/drive/MyDrive/Explicit Content Analysis/badwords3.txt','r')
+file = open('Badwords.txt','r')
 file = list(file)
 bad_words = []
 for w in file:
