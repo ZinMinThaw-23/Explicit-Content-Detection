@@ -152,7 +152,7 @@ def classification(feats, model):
   print("Confusion Matrix : \n", cm, " \n")
 
   report = classification_report(test_label, test_preds)
-  print(report)
+  #print(report)
 
   return train_f1,test_f1
 
