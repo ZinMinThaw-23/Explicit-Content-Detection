@@ -20,7 +20,7 @@ from sklearn.svm import SVC
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
-from DataPreprocessing import Classification
+from DataPreprocessing import classification
 
 
 #Streamlit Theme
