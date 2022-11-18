@@ -3,3 +3,4 @@ streamlit
 regex
 scikit-learn
 pyLDAvis
+tensorflow
