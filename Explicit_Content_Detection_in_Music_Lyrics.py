@@ -86,11 +86,11 @@ if submit:
 	output = classification(feats,model_lo)
 
 
-if output[0]==1:
-	output_string="The song includes explicit words"
-else:
-	output_string="The song is clean and doesn't include explicit words"
-st.text_area(label="Output Data:", value=output_string, height=50)
+#if output[0]==1:
+	#output_string="The song includes explicit words"
+#else:
+	#output_string="The song is clean and doesn't include explicit words"
+#st.text_area(label="Output Data:", value=output_string, height=50)
 st.text_area(label="Output Data:", value=output, height=50)
 
 #st.text_area(label="Output Data:", value=output_string, height=50)
