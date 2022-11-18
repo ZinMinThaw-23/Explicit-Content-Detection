@@ -228,7 +228,7 @@ input = st.text_area("Input :","I was Enchanted to meet you")
 
 vocab_size = 500
 embedding_dim = 64
-max_length = 150
+max_length = 16067
 trunc_type='post'        #put needed '0's for max length
 oov_tok = "<OOV>"
 	
