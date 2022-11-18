@@ -16,6 +16,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from tensorflow.keras.preprocessing.text import Tokenizer
+from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 #Clean the dataset by removing no match rows
 song_data = pd.read_csv("Labeled_Data.csv")
@@ -233,9 +234,10 @@ oov_tok = "<OOV>"
 tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
 tokenizer.fit_on_texts(input)
 word_index = tokenizer.word_index
+padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 
 
 
 #input_vec = feats.transform(input)
 
-st.text_area(label="Output Data:", value=word_index, height=350)
+st.text_area(label="Output Data:", value=padded, height=350)
