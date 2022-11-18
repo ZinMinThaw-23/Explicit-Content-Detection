@@ -223,6 +223,10 @@ st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyri
 
 input = st.text_area("Input :","I was Enchanted to meet you")
 
-input_vec = feats.transform(input)
+input_list =[]
+for i in range(len(input)):
+	input_list.append(input)
 
-st.text_area(label="Output Data:", value=input_vec, height=350)
+#input_vec = feats.transform(input)
+
+st.text_area(label="Output Data:", value=input_list, height=350)
