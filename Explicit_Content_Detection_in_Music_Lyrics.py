@@ -234,6 +234,7 @@ oov_tok = "<OOV>"
 tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
 tokenizer.fit_on_texts(input)
 word_index = tokenizer.word_index
+sequences = tokenizer.texts_to_sequences(input)
 padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 
 
