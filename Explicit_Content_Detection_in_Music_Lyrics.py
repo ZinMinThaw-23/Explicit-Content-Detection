@@ -83,7 +83,6 @@ if submit:
 		   
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
 	output = loaded_model.predict(padded)
-	return(output)
 
 if output[0]==1:
 	output_string="The song includes explicit words"
