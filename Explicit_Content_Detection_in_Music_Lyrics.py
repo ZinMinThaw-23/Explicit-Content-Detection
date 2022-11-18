@@ -242,4 +242,9 @@ padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,paddin
 
 output = model_dt.predict(padded)
 
-st.text_area(label="Output Data:", value=len(output), height=350)
+if output[0]==1:
+	output_string="The song includes explicit words"
+else:
+	output_string="The song is clean and doesn't include explicit words"
+
+st.text_area(label="Output Data:", value=output_string, height=350)
