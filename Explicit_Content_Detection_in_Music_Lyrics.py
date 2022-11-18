@@ -62,7 +62,7 @@ def classification(feats, model):
 
   return train_preds
 	
-if submit:
+while submit:
 	#vocab_size = 500
 	#embedding_dim = 64
 	#max_length = 16067
