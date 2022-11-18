@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import re
 import os
+import pickle
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import FeatureUnion
