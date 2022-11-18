@@ -80,7 +80,7 @@ if submit:
     		input_data.append(input)
 	feats = pickle.load(open("feats.sav", 'rb'))
 	input_vecs = feats.transform(input_data)
-	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
+	loaded_model = pickle.load(open("finalized_model_dt.sav", 'rb'))
 	output = loaded_model.predict(input_vecs)
 
 
