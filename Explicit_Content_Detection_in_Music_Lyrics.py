@@ -67,28 +67,27 @@ form = st.form(key='my-form')
 input = form.text_input("Input :","I was Enchanted to meet you")
 submit = form.form_submit_button('Submit')
 st.write('Press submit to apply')
-
-vocab_size = 500
-embedding_dim = 64
-max_length = 16067
-trunc_type='post'        #put needed '0's for max length
-oov_tok = "<OOV>"
-	
-tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
-tokenizer.fit_on_texts(input)
-word_index = tokenizer.word_index
-sequences = tokenizer.texts_to_sequences(input)
-padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
-		   
-loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
-output = loaded_model.predict(padded)
-
-if output[0]==1:
-	output_string="The song includes explicit words"
-else:
-	output_string="The song is clean and doesn't include explicit words"
 	
 if submit:
-    st.text_area(label="Output Data:", value=output_string, height=50)
+	vocab_size = 500
+	embedding_dim = 64
+	max_length = 16067
+	trunc_type='post'        #put needed '0's for max length
+	oov_tok = "<OOV>"
+	
+	tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
+	tokenizer.fit_on_texts(input)
+	word_index = tokenizer.word_index
+	sequences = tokenizer.texts_to_sequences(input)
+	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
+		   
+	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
+	output = loaded_model.predict(padded)
+
+	if output[0]==1:
+		output_string="The song includes explicit words"
+	else:
+		output_string="The song is clean and doesn't include explicit words"
+    	st.text_area(label="Output Data:", value=output_string, height=50)
 
 #st.text_area(label="Output Data:", value=output_string, height=50)
