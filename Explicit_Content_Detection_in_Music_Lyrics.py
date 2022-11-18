@@ -81,7 +81,6 @@ if submit:
 	sequences = tokenizer.texts_to_sequences(input)
 	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
-	classification(fea
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
 	output = classification(feats,model_lo)
 
