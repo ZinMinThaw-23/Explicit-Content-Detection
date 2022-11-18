@@ -63,32 +63,26 @@ def classification(feats, model):
   return train_preds
 	
 if submit:
-	#vocab_size = 500
-	#embedding_dim = 64
-	#max_length = 16067
-	#trunc_type='post'        #put needed '0's for max length
-	#oov_tok = "<OOV>"
+	vocab_size = 500
+	embedding_dim = 64
+	max_length = 16067
+	trunc_type='post'        #put needed '0's for max length
+	oov_tok = "<OOV>"
 	
-	#tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
-	#tokenizer.fit_on_texts(input)
-	#word_index = tokenizer.word_index
-	#sequences = tokenizer.texts_to_sequences(input)
-	#padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
+	tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
+	tokenizer.fit_on_texts(input)
+	word_index = tokenizer.word_index
+	sequences = tokenizer.texts_to_sequences(input)
+	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
-	input_data = []
-	for i in range(len(input)):
-    		input_data.append(input)
-	feats = pickle.load(open("feats.sav", 'rb'))
-	input_vecs = feats.transform(input_data)
-	loaded_model = pickle.load(open("finalized_model_dt.sav", 'rb'))
-	output = loaded_model.predict(input_vecs)
+	loaded_model = pickle.load(open("finalized_model.sav", 'rb'))
+	output = loaded_model.predict(padded)
+	for i in output:
+    		if(i<0.5):
+        		output_string="The song includes explicit words"
+    		else:
+        		output_string="The song is clean and doesn't include explicit words"
 
 
-#if output[0]==1:
-	#output_string="The song includes explicit words"
-#else:
-	#output_string="The song is clean and doesn't include explicit words"
-st.text_area(label="Output Data:", value=input_data, height=50)
-st.text_area(label="Output Data:", value=output, height=50)
 
-st.text_area(label="Output Data:", value=input_vecs, height=50)
+st.text_area(label="Output Data:", value=output_string, height=50)
