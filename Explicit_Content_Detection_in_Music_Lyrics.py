@@ -19,6 +19,7 @@ from sklearn.svm import SVC
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
+import pickle
 
 
 #Streamlit Theme
@@ -76,11 +77,9 @@ tokenizer.fit_on_texts(input)
 word_index = tokenizer.word_index
 sequences = tokenizer.texts_to_sequences(input)
 padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
-
-dirname = os.path.dirname(__file__)
-model = load_model(os.path.join(dirname,"DataPreprocessing.py")
-
-output = model.predict(padded)
+		   
+loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
+output = loaded_model.predict(padded)
 
 if output[0]==1:
 	output_string="The song includes explicit words"
