@@ -225,6 +225,4 @@ input = st.text_area("Input :","I was Enchanted to meet you")
 
 input_vec = feats.transform(input)
 
-output = model_dt.predict(input_vec)
-
-st.text_area(label="Output Data:", value=output, height=350)
+st.text_area(label="Output Data:", value=input_vec, height=350)
