@@ -71,7 +71,7 @@ if submit:
 	max_length = 16067
 	trunc_type='post'        #put needed '0's for max length
 	oov_tok = "<OOV>"
-	
+	input=[input]
 	tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
 	tokenizer.fit_on_texts(input)
 	word_index = tokenizer.word_index
@@ -85,7 +85,4 @@ if submit:
         		output_string="The song includes explicit words"
     		else:
         		output_string="The song is clean and doesn't include explicit words"
-
-
-
-st.text_area(label="Output Data:", value=output_string, height=50)
+	st.text_area(label="Output Data:", value=output_string, height=50)
