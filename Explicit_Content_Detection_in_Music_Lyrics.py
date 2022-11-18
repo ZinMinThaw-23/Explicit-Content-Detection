@@ -15,6 +15,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
+from tensorflow.keras.preprocessing.text import Tokenizer
 
 #Clean the dataset by removing no match rows
 song_data = pd.read_csv("Labeled_Data.csv")
@@ -223,10 +224,18 @@ st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyri
 
 input = st.text_area("Input :","I was Enchanted to meet you")
 
-input_list =[]
-for i in range(len(input)):
-	input_list.append(input)
+vocab_size = 500
+embedding_dim = 64
+max_length = 150
+trunc_type='post'        #put needed '0's for max length
+oov_tok = "<OOV>"
+	
+tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
+tokenizer.fit_on_texts(input)
+word_index = tokenizer.word_index
+
+
 
 #input_vec = feats.transform(input)
 
-st.text_area(label="Output Data:", value=input_list, height=350)
+st.text_area(label="Output Data:", value=word_index, height=350)
