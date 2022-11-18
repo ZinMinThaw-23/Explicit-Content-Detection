@@ -88,7 +88,7 @@ if submit:
 	#output_string="The song includes explicit words"
 #else:
 	#output_string="The song is clean and doesn't include explicit words"
-#st.text_area(label="Output Data:", value=output_string, height=50)
+st.text_area(label="Output Data:", value=input_data, height=50)
 st.text_area(label="Output Data:", value=output, height=50)
 
-#st.text_area(label="Output Data:", value=output_string, height=50)
+st.text_area(label="Output Data:", value=input_vecs, height=50)
