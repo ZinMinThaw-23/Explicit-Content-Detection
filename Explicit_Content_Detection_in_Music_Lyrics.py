@@ -67,7 +67,7 @@ def classification(feats, model):
   return train_preds
 	
 if submit:
-	vocab_size = 500
+	vocab_size = 100
 	embedding_dim = 64
 	max_length = 150
 	trunc_type='post'        #put needed '0's for max length
@@ -88,8 +88,8 @@ if submit:
 	loaded_model.load_weights("model.h5")
 	output = loaded_model.predict(padded)
 	for i in output:
-    		if(i<0.5):
+    		if(i>0.5):
         		output_string="The song includes explicit words"
-    		else:
+    		elseif(i<0.5):
         		output_string="The song is clean and doesn't include explicit words"
 	st.text_area(label="Output Data:", value=output_string, height=50)
