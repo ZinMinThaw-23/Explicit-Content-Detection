@@ -77,8 +77,15 @@ if submit:
 	word_index = tokenizer.word_index
 	sequences = tokenizer.texts_to_sequences(input)
 	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
-	loaded_model = pickle.load(open('trainedmodel.sav', 'rb'))
-	output = loaded_model.predict(padded)
+	
+	# load json and create model
+	json_file = open('model.json', 'r')
+	loaded_model_json = json_file.read()
+	json_file.close()
+	loaded_model = model_from_json(loaded_model_json)
+	# load weights into new model
+	model = loaded_model.load_weights("model.h5")
+	output = model.predict(padded)
 	for i in output:
     		if(i<0.5):
         		output_string="The song includes explicit words"
