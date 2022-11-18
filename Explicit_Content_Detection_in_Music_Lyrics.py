@@ -21,7 +21,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
 from DataPreprocessing import classification
-from DataPreprocessing import feats
+ 
 
 #Streamlit Theme
 st.set_page_config( page_title="Color Analysis with David",page_icon="🧊",layout="wide", initial_sidebar_state="expanded")      
@@ -68,6 +68,15 @@ form = st.form(key='my-form')
 input = form.text_input("Input :","I was Enchanted to meet you")
 submit = form.form_submit_button('Submit')
 st.write('Press submit to apply')
+
+def classification(feats, model):
+  test_vecs = feats.transform(test_data)
+    
+  model.fit(train_vecs, train_label)
+
+  train_preds = model.predict(train_vecs)
+
+  return train_preds
 	
 if submit:
 	vocab_size = 500
@@ -82,8 +91,9 @@ if submit:
 	sequences = tokenizer.texts_to_sequences(input)
 	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
+	#feats = pickle.load(open("feats.sav", 'rb'))
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
-	output = classification(feats,model_lo)
+	output = loaded_model.predict(input)
 
 
 #if output[0]==1:
