@@ -85,8 +85,8 @@ if submit:
 	json_file.close()
 	loaded_model = model_from_json(loaded_model_json)
 	# load weights into new model
-	model = loaded_model.load_weights("model.h5")
-	output = model.predict(padded)
+	loaded_model.load_weights("model.h5")
+	output = loaded_model.predict(padded)
 	for i in output:
     		if(i<0.5):
         		output_string="The song includes explicit words"
