@@ -220,6 +220,7 @@ st.markdown("""
 
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
+
 input = st.text_area("Enter Input Data :")
 
 output1 = model_dt.predict(input)
