@@ -221,10 +221,8 @@ st.markdown("""
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
 
-input = st.text_area("Enter Input Data :")
+input = st.text_area("Input :","I was Enchanted to meet you")
 
-output1 = model_dt.predict(input)
+output = model_dt.predict(input)
 
-output = input.upper() # final_result_from_processing_the_input
-
-st.text_area(label="Output Data:", value=output1, height=350)
+st.text_area(label="Output Data:", value=output, height=350)
