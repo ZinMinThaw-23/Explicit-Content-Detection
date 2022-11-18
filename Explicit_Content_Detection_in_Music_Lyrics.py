@@ -239,6 +239,6 @@ padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,paddin
 
 
 
-#input_vec = feats.transform(input)
+output = model_dt.predict(padded)
 
-st.text_area(label="Output Data:", value=padded, height=350)
+st.text_area(label="Output Data:", value=output, height=350)
