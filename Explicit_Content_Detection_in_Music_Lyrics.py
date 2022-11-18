@@ -3,24 +3,7 @@ import pandas as pd
 import re
 import os
 import pickle
-from sklearn.model_selection import train_test_split
-from sklearn.model_selection import GridSearchCV
-from sklearn.pipeline import FeatureUnion
-from sklearn.pipeline import Pipeline, make_pipeline
-from sklearn.base import BaseEstimator, TransformerMixin
-from sklearn.feature_extraction import DictVectorizer
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix, precision_score, precision_recall_curve, recall_score, f1_score
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.svm import SVC
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
-from DataPreprocessing import CustomFeats
  
 
 #Streamlit Theme
@@ -91,6 +74,7 @@ if submit:
 	#sequences = tokenizer.texts_to_sequences(input)
 	#padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
+	CustomFeats = pickle.load(open("CustomFeats.sav", 'rb'))
 	feats = pickle.load(open("feats.sav", 'rb'))
 	input_vecs = feats.transform(input)
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
