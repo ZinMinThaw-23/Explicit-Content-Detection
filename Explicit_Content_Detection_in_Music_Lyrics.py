@@ -80,7 +80,7 @@ padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,paddin
 dirname = os.path.dirname(__file__)
 model = load_model(os.path.join(dirname,"DataPreprocessing.py")
 
-output = model_dt.predict(padded)
+output = model.predict(padded)
 
 if output[0]==1:
 	output_string="The song includes explicit words"
