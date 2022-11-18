@@ -241,6 +241,5 @@ padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,paddin
 
 
 output = model_dt.predict(padded)
-output.type()
 
-st.text_area(label="Output Data:", value=output.type(), height=350)
+st.text_area(label="Output Data:", value=len(output), height=350)
