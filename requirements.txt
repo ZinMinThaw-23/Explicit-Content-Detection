@@ -4,4 +4,3 @@ regex
 scikit-learn
 pyLDAvis
 tensorflow
-pickle
