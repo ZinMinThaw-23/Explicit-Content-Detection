@@ -223,6 +223,8 @@ st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyri
 
 input = st.text_area("Input :","I was Enchanted to meet you")
 
-output = model_dt.predict(input)
+input_vec = feats.transform(input)
+
+output = model_dt.predict(input_vec)
 
 st.text_area(label="Output Data:", value=output, height=350)
