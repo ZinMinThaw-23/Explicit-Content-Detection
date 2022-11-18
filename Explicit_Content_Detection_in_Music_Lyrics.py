@@ -90,6 +90,6 @@ if submit:
 	for i in output:
     		if(i>0.5):
         		output_string="The song includes explicit words"
-    		elseif(i<0.5):
+    		else:
         		output_string="The song is clean and doesn't include explicit words"
 	st.text_area(label="Output Data:", value=output_string, height=50)
