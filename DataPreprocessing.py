@@ -168,9 +168,6 @@ classification(feats, model_lo)
 model_rf = RandomForestClassifier(n_estimators=110, max_depth=140, min_samples_split=30)
 classification(feats, model_rf)
 
-filename = 'finalized_model_rf.sav'
-pickle.dump(model_rf, open(filename, 'wb'))
-
 #KNN
 model_knn= KNeighborsClassifier(n_neighbors=10) 
 classification(feats, model_knn)
