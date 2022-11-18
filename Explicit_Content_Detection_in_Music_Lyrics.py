@@ -63,8 +63,10 @@ st.markdown("""
 
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
-
-input = st.text_input("Input :","I was Enchanted to meet you")
+form = st.form(key='my-form')
+input = form.text_input("Input :","I was Enchanted to meet you")
+submit = form.form_submit_button('Submit')
+st.write('Press submit to apply')
 
 vocab_size = 500
 embedding_dim = 64
@@ -85,5 +87,8 @@ if output[0]==1:
 	output_string="The song includes explicit words"
 else:
 	output_string="The song is clean and doesn't include explicit words"
+	
+if submit:
+    st.text_area(label="Output Data:", value=output_string, height=50)
 
-st.text_area(label="Output Data:", value=output_string, height=50)
+#st.text_area(label="Output Data:", value=output_string, height=50)
