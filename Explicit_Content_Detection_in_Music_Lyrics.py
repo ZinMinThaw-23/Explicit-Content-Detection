@@ -20,7 +20,7 @@ from sklearn.svm import SVC
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.models import load_model
-from DataPreprocessing import classification
+from DataPreprocessing import CustomFeats
  
 
 #Streamlit Theme
@@ -79,21 +79,22 @@ def classification(feats, model):
   return train_preds
 	
 if submit:
-	vocab_size = 500
-	embedding_dim = 64
-	max_length = 16067
-	trunc_type='post'        #put needed '0's for max length
-	oov_tok = "<OOV>"
+	#vocab_size = 500
+	#embedding_dim = 64
+	#max_length = 16067
+	#trunc_type='post'        #put needed '0's for max length
+	#oov_tok = "<OOV>"
 	
-	tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
-	tokenizer.fit_on_texts(input)
-	word_index = tokenizer.word_index
-	sequences = tokenizer.texts_to_sequences(input)
-	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
+	#tokenizer = Tokenizer(num_words = vocab_size, oov_token=oov_tok)
+	#tokenizer.fit_on_texts(input)
+	#word_index = tokenizer.word_index
+	#sequences = tokenizer.texts_to_sequences(input)
+	#padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
-	#feats = pickle.load(open("feats.sav", 'rb'))
+	feats = pickle.load(open("feats.sav", 'rb'))
+	input_vecs = feats.transform(input)
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
-	output = loaded_model.predict(input)
+	output = loaded_model.predict(input_vecs)
 
 
 #if output[0]==1:
