@@ -64,7 +64,7 @@ st.markdown("""
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
 
-input = st.input("Input :","I was Enchanted to meet you")
+input = st.text_input("Input :","I was Enchanted to meet you")
 
 vocab_size = 500
 embedding_dim = 64
