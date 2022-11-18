@@ -4,6 +4,7 @@ import re
 import os
 import pickle
 from keras.models import load_model
+from DataPreprocessing import CustomFeats
  
 
 #Streamlit Theme
@@ -74,7 +75,7 @@ if submit:
 	#sequences = tokenizer.texts_to_sequences(input)
 	#padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
 	
-	CustomFeats = pickle.load(open("CustomFeats.sav", 'rb'))
+	
 	feats = pickle.load(open("feats.sav", 'rb'))
 	input_vecs = feats.transform(input)
 	loaded_model = pickle.load(open("finalized_model_rf.sav", 'rb'))
