@@ -77,7 +77,7 @@ if submit:
 	word_index = tokenizer.word_index
 	sequences = tokenizer.texts_to_sequences(input)
 	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
-	loaded_model = pickle.load(open("finalized_model.sav", 'rb'))
+	loaded_model = pickle.load(open('trainedmodel.sav', 'rb'))
 	output = loaded_model.predict(padded)
 	for i in output:
     		if(i<0.5):
