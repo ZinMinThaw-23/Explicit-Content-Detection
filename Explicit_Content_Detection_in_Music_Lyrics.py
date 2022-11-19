@@ -52,7 +52,7 @@ st.markdown("""
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
 
 form = st.form(key='my-form')
-input = form.text_input("Input :","I was Enchanted to meet you")
+input = form.text_input("Enter the lyrics of the song you want to classify:","I was Enchanted to meet you")
 st.write('Press submit to apply')
 submit = form.form_submit_button('Submit')
 
