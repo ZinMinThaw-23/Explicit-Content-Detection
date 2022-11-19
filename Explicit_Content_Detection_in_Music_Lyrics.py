@@ -4,7 +4,6 @@ import re
 import os
 import pickle
 from keras.models import load_model
-from DataPreprocessing import CustomFeats
 import tensorflow as tf
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
