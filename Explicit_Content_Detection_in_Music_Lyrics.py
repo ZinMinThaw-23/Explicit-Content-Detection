@@ -69,7 +69,7 @@ def classification(feats, model):
 if submit:
 	vocab_size = 100
 	embedding_dim = 64
-	max_length = 150
+	max_length = 500
 	trunc_type='post'        #put needed '0's for max length
 	oov_tok = "<OOV>"
 	input=[input]
