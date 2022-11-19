@@ -35,7 +35,7 @@ streamlit_style = """
 			html, body, [class*="css"]  {
 			font-family: 'Nunito Sans', sans-serif;
 			font-size:15px;
-			color: 	#ffffff;
+			color: 	#D7A1F9;
 			}
 			</style>
 			"""
@@ -54,7 +54,7 @@ st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyri
 form = st.form(key='my-form')
 input = form.text_input("Input :","I was Enchanted to meet you")
 st.write('Press submit to apply')
-submit = form.form_submit_button('Submit',color:black;)
+submit = form.form_submit_button('Submit')
 
 
 def classification(feats, model):
