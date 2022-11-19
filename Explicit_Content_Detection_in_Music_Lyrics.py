@@ -86,6 +86,5 @@ if submit:
     		else:
         		output_string="The song is clean and doesn't include explicit words"
 	st.text_area(label="Output Data:", value=output_string, height=25)
-	This project will help user identify if a song is explicit or clean.
 	
-st.write('This project will help user identify if a song is explicit or clean. \nPlease enter the lyrics of the song you want to identify in the input box and press the submit button.')
+st.write('This site will help you identify if a song is explicit or clean. \nPlease enter the lyrics of the song you want to identify in the input box and press the submit button.')
