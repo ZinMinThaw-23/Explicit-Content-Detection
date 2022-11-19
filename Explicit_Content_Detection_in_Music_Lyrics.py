@@ -66,7 +66,7 @@ def classification(feats, model):
   return train_preds
 	
 if submit:
-	vocab_size = 100
+	vocab_size = 13
 	embedding_dim = 64
 	max_length = 500
 	trunc_type='post'        #put needed '0's for max length
