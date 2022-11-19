@@ -80,7 +80,7 @@ if submit:
 	loaded_model = pickle.load(open("Classifier.sav", 'rb'))
 	output = loaded_model.predict(padded)
 	for i in output:
-    		if(i>0.5):
+    		if(i==1):
         		output_string="The song includes explicit words"
     		else:
         		output_string="The song is clean and doesn't include explicit words"
