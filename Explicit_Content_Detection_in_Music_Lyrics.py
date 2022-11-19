@@ -53,8 +53,9 @@ st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyri
 
 form = st.form(key='my-form')
 input = form.text_input("Input :","I was Enchanted to meet you")
-submit = form.form_submit_button('Submit')
 st.write('Press submit to apply')
+submit = form.form_submit_button('Submit',color:black;)
+
 
 def classification(feats, model):
   test_vecs = feats.transform(test_data)
