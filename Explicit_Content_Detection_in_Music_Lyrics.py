@@ -91,5 +91,4 @@ if submit:
 			output_string="The song is clean and doesn't include explicit words"
     		else:
         		output_string="The song includes explicit words"
-			
 	st.text_area(label="Output Data:", value=output_string, height=50)
