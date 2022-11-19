@@ -50,7 +50,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
-
+st.write('This site will help you identify if a song is explicit or clean. \nPlease enter the lyrics of the song you want to identify in the input box and press the submit button.')
 form = st.form(key='my-form')
 input = form.text_input("Enter the lyrics of the song you want to classify:","I was Enchanted to meet you")
 st.write('Press submit to apply')
@@ -87,4 +87,4 @@ if submit:
         		output_string="The song is clean and doesn't include explicit words"
 	st.text_area(label="Output Data:", value=output_string, height=25)
 	
-st.write('This site will help you identify if a song is explicit or clean. \nPlease enter the lyrics of the song you want to identify in the input box and press the submit button.')
+
