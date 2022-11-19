@@ -66,7 +66,7 @@ def classification(feats, model):
   return train_preds
 	
 if submit:
-	vocab_size = 13
+	vocab_size = 100
 	embedding_dim = 64
 	max_length = 500
 	trunc_type='post'        #put needed '0's for max length
@@ -77,17 +77,10 @@ if submit:
 	word_index = tokenizer.word_index
 	sequences = tokenizer.texts_to_sequences(input)
 	padded = pad_sequences(sequences,maxlen=max_length, truncating=trunc_type,padding='post')
-	
-	# load json and create model
-	json_file = open('model.json', 'r')
-	loaded_model_json = json_file.read()
-	json_file.close()
-	loaded_model = model_from_json(loaded_model_json)
-	# load weights into new model
-	loaded_model.load_weights("model.h5")
+	loaded_model = pickle.load(open("Classifier.sav", 'rb'))
 	output = loaded_model.predict(padded)
 	for i in output:
-    		if(i>0.5):
+    		if(i==1):
         		output_string="The song includes explicit words"
     		else:
         		output_string="The song is clean and doesn't include explicit words"
