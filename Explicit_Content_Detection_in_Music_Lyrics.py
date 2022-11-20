@@ -11,7 +11,7 @@ from tensorflow.keras.models import model_from_json
  
 
 #Streamlit Theme
-st.set_page_config( page_title="Color Analysis with David",page_icon="🧊",layout="wide", initial_sidebar_state="expanded")      
+st.set_page_config( page_title="Explicit Content Detection in Music Lyrics",page_icon="🧊",layout="wide", initial_sidebar_state="expanded")      
 
 def add_bg_from_url():
     st.markdown(
@@ -49,7 +49,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown('<p style="font-size: 42px;">Explicit Content Analysis in Music Lyrics </p>', unsafe_allow_html=True)
+st.markdown('<p style="font-size: 42px;">Explicit Content Detection in Music Lyrics </p>', unsafe_allow_html=True)
 st.write('This site will help you identify if a song is explicit or clean. \nPlease enter the lyrics of the song you want to identify in the input box and press the submit button.')
 form = st.form(key='my-form')
 input = form.text_input("Enter the lyrics of the song you want to classify:","I was Enchanted to meet you")
